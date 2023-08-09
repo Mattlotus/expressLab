@@ -21,6 +21,16 @@ app.get(`/greeting/:name`, ( req, res ) => {
 
 
 
+app.get('/magic/:question', ( req, res ) => {
+    res.send(`
+    <h1> QUESTION:${req.params.question} </h1>
+    <p style="text-align: center"> ${magicResponses[getRandomInt(0, magicResponses.length)]} <p>
+    `)
+
+})
+
+
+
 
 app.listen(PORT, ( req, res ) => {
     console.log(`Now listening on ${PORT} radio`)
